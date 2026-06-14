@@ -153,13 +153,3 @@ inner join matches using(match_id)
 
 select user_id, full_name, booking_id from bookings
 full join users using(user_id)
-
-
-select booking_id, match_id, total_cost from bookings
-where total_cost > (select avg(total_cost) from bookings)
-
-
-select match_id, fixture, base_ticket_price from matches
-order by base_ticket_price desc
-offset 1
-limit 2
